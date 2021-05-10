@@ -1,0 +1,13 @@
+<launch>
+    <!-- <include file="$(find detect_object)/launch/camera_frame_wrt_head.launch" /> -->
+    <include file="$(find detect_object)/launch/table_frame_wrt_cam.launch" />
+
+    <!-- <node pkg="tf" type="static_transform_publisher" name="torso_2_fixed_head" args="0.060, 0.000, 0.686, 0.0, 0.0, -0.207, 0.978 torso fixed_head 50"/> -->
+    <node pkg="tf" type="static_transform_publisher" name="torso_2_fixed_head" args="0.075, 0.000, 0.686, 0.0, 0.0, -0.207, 0.978 torso fixed_head 50"/>
+    <!-- <node pkg="tf" type="static_transform_publisher" name="fixed_head_2_camera_link" args="0.104, 0.110, 0.121, -0.163, 0.625, 0.194, 0.738 fixed_head camera_link 50"/> -->
+    <node pkg="tf" type="static_transform_publisher" name="fixed_head_2_camera_link" args="0.104, 0.110, 0.121, -0.163, 0.625, 0.194, 0.738 fixed_head camera_link 50"/>
+
+    <!-- capture pcl and detect object -->
+    <node name="capture_current_pcl_srv" pkg="detect_object" type="capture_pcl_service"/>
+    <node name="detect_object_srv" pkg="detect_object" type="detect_object_service"/>
+</launch>

@@ -1,0 +1,16 @@
+<launch>
+<!-- <node pkg="tf" type="static_transform_publisher" name="kinect_calib" args="0.172, 0.038, 0.115, 0.043, 0.636, -0.048, 0.769  head kinect_link 50"/> -->
+
+<node pkg="tf" type="static_transform_publisher" name="kinect_calib" args="0.171 0.038 0.123 0.09 1.425 0.0  head camera_link 50"/>
+<!-- <node pkg="tf" type="static_transform_publisher" name="kinect_sensor2" args="0 0 0 -0.500 0.500 -0.500 0.500 kinect_link camera_depth_optical_frame 50"/> -->
+<!-- 
+<node pkg="tf" type="static_transform_publisher" name="correct_table" args="0.01881 0.00762 -0.00336 -0.0094525 -0.0087453 -0.0442357 0.9989381 table_frame table_corrected_frame 50"/>
+<node pkg="tf" type="static_transform_publisher" name="correct_table_wrt_torso" args="0.277 0.015 -0.193 -0.015 -0.023 -0.055 0.998 torso table_corrected_frame_wrt_torso 50"/>
+<node pkg="tf" type="static_transform_publisher" name="corrected_table_kinect_link" args="0.000 -0.000 0.997 0.006 0.655 0.005 0.756 table_corrected_frame_wrt_torso kinect_link_new 50"/> -->
+
+<!-- <node pkg="tf" type="static_transform_publisher" name="block5" args="0.644, 0.015, -0.186, 0.947, 0.321, 0.014, 0.005 torso block5 50"/>
+<node pkg="tf" type="static_transform_publisher" name="block8" args="0.800, -0.401, -0.180, 0.714, 0.700, 0.017, 0.015 torso block8 50"/>
+<node pkg="tf" type="static_transform_publisher" name="block9" args="0.414, -0.410, -0.186, 0.734, 0.679, 0.018, -0.006 torso block9 50"/>
+<node pkg="tf" type="static_transform_publisher" name="block10" args="0.464, 0.095, -0.186, 0.915, 0.403, 0.017, -0.023 torso block10 50"/> -->
+
+</launch>

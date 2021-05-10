@@ -1,0 +1,18 @@
+<launch>
+
+<!-- these node are to simulate the relationship between the torso and the kinect on the actual robot -->
+<node pkg="tf" type="static_transform_publisher" name="torso_2_real_head" args="0.060, 0.000, 0.686, 0.000, 0.000, -0.207, 0.978 torso real_head 50"/>
+
+<!-- <node pkg="tf" type="static_transform_publisher" name="head_correction" args="0 0 0 0 0 0.192 0.981 real_head corrected_head 50"/> -->
+
+<!-- <node pkg="tf" type="static_transform_publisher" name="real_head_2_camera_link" args="0.171, 0.038, 0.123, -0.029, 0.653, 0.034, 0.756 real_head camera_link 50"/> -->
+
+<!-- <node pkg="tf" type="static_transform_publisher" name="real_head_2_camera_link" args="0.091, 0.108, 0.116, -0.165, 0.620, 0.195, 0.742 real_head camera_link 50"/> -->
+
+<node pkg="tf" type="static_transform_publisher" name="real_head_2_camera_link" args="0.104, 0.110, 0.121, -0.163, 0.625, 0.194, 0.738 real_head camera_link 50"/>
+
+
+<node pkg="tf" type="static_transform_publisher" name="camera_2_camera_depth_optical_frame" args="0.000, -0.020, 0.000, -0.500, 0.500, -0.500, 0.500 camera_link camera_depth_optical_frame 50"/>
+<node pkg="tf" type="static_transform_publisher" name="camera_2_camera_rgb_optical_frame" args="0.000, -0.045, 0.000, -0.500, 0.500, -0.500, 0.500 camera_link camera_rgb_optical_frame 50"/>
+
+</launch>

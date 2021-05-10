@@ -1,0 +1,16 @@
+<launch>
+    <!-- <include file="$(find detect_object)/launch/camera_frame_wrt_head.launch" /> -->
+    <include file="$(find detect_object)/launch/table_frame_wrt_cam.launch" />
+
+    <!-- correcting cam -->
+
+    <!-- 0.0134869  -0.0038468   0.0128065   0.0030522   0.0146378  -0.2121231   0.9771286 -->
+    <!-- <node pkg="tf" type="static_transform_publisher" name="torso_2_adjusted_torso" args="0.0134869  -0.0038468   0.0128065   0.0030522   0.0146378  -0.2121231   0.9771286 torso adjusted_torso 50"/> -->
+    <node pkg="tf" type="static_transform_publisher" name="torso_2_adjusted_torso" args="0.00955884  -0.00237037   0.00675530   0.00016094   0.01018980  -0.20995746   0.97765741 torso adjusted_torso 50"/>
+    <node pkg="tf" type="static_transform_publisher" name="adjusted_torso_2_adjusted_head" args="0.060, 0.000, 0.686, 0.000, 0.000, -0.207, 0.978 adjusted_torso adjusted_head 50"/>
+    <!-- <node pkg="tf" type="static_transform_publisher" name="block_frame_2_adjusted_camera_link" args="0.455, -0.225, -0.997, 0.573, 0.493, 0.490, -0.434 block_frame adjusted_camera_link 50"/>     -->
+    <node pkg="tf" type="static_transform_publisher" name="block_frame_2_adjusted_camera_link" args="0.048, -0.326, -0.997, 0.552, 0.516, 0.472, -0.454 block_frame adjusted_camera_link 50"/>    
+
+    <node name="capture_current_pcl_srv" pkg="detect_object" type="capture_pcl_service"/>
+    <node name="detect_object_srv" pkg="detect_object" type="detect_object_service"/>
+</launch>

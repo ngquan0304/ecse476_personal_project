@@ -1,0 +1,3 @@
+int8 cluster_index
+---
+sensor_msgs/PointCloud2 cluster_pcl
