@@ -179,7 +179,7 @@ int main (int argc, char **argv)
         // wrap around for Douglas Peucker
         points.push_back(points[0]);
         // Dougals Peucker
-        std::vector<geometry_msgs::Point32> simplified_poly = simplify_poly(points, 0.005);
+        std::vector<geometry_msgs::Point32> simplified_poly = simplify_poly(points, 0.0065);
         simplified_poly.pop_back();
         if (simplified_poly.size() < num_vertices)
         {
